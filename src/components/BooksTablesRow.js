@@ -34,7 +34,7 @@ export default class BooksTableRow extends Component {
           <Link
             className="edit-link"
             path={"product/:id"}
-            to={"/edit-student/" + this.props.obj._id}
+            to={"/editar-libro/" + this.props.obj._id}
           >
             Editar
           </Link>

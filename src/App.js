@@ -15,14 +15,12 @@ import ListaLibro from "./components/lista-libro.component";
 import LoginLibro from "./components/login-libro.component";
 import UserRegister from "./components/user-register.component";
 import ConfirmPassword from "./components/confirm-password.component";
-
-
+import EditarLibro from "./components/editar-libro.component";
 
 function App() {
   return (
     <div className="App">
       <Router>
-       
         <header className="App-header">
           <Navbar bg="navbar bg-primary ">
             <Container>
@@ -95,6 +93,11 @@ function App() {
                   />
                   <Route
                     exact
+                    path="/editar-libro"
+                    component={(props) => <EditarLibro {...props} />}
+                  />
+                  <Route
+                    exact
                     path="/login-libro"
                     component={(props) => <LoginLibro {...props} />}
                   />
@@ -102,30 +105,34 @@ function App() {
                     exact
                     path="/user-register"
                     component={(props) => <UserRegister {...props} />}
-                 />
+                  />
                   <Route
                     exact
                     path="/confirm-password"
                     component={(props) => <ConfirmPassword {...props} />}
-                 />
+                  />
                 </Switch>
               </div>
             </Col>
           </Row>
         </Container>
         <Switch>
-           <Route
-              exact
-              path="/"
-              component={(props) => <HomeLibro {...props} />}
-              />
-              <Route
-               exact
-               path="/home-libro"
-               component={(props) => <HomeLibro {...props} />}
-               />
+          <Route
+            exact
+            path="/"
+            component={(props) => <HomeLibro {...props} />}
+          />
+          <Route
+            exact
+            path="/home-libro"
+            component={(props) => <HomeLibro {...props} />}
+          />
         </Switch>
       </Router>
+      <footer>
+        <p>Todos los derechos reservados &copy; 2022</p>
+        <p>Políticas de privacidad | Términos de uso</p>
+      </footer>
     </div>
   );
 }
